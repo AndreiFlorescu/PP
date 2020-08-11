@@ -1,0 +1,61 @@
+f x = iterarte $ x . x . x 
+
+x :: a -> b
+x . x :: b -> b  => a = b
+x . x . x :: a -> a
+filter :: (Bool -> Bool) -> [c] -> [c]
+
+7.
+
+
+
+om(Ion) ^ V X.(om(X) => areBicla(X))
+concl: areBicla(Ion) v bogat(Ion)
+
+Clauze:
+   a               b
+om(ion) ^ (~om(X) v areBicla(X))
+
+	^
+
+   c             d
+~areBicla(Ion) ^ ~bogat(Ion)
+
+a ^ b ^ c ^ d => concl
+
+λx.λy.((λx.λy.x (y x)) (x y)) ->
+
+alpha - conv
+
+λx.λy.((λz.(y x) (x y)) ->
+
+λx.λy.(y x)
+
+
+
+
+
+
+λx.λy.((λx.λy.y (x y)) (y x)) ->
+
+λx.λy.(λy.y (y x)) ->
+
+λx.λy.(y x)
+
+
+
+z :: a
+y :: a -> (b -> c)
+y z :: b -> c
+x :: c -> d
+x . y z :: b -> d
+f x y z :: b -> d
+
+f :: (c -> d) -> (a -> b -> c) -> a -> b -> d
+
+
+
+
+
+instance (Eq a, Ord a) => 
+

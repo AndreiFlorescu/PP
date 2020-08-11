@@ -1,0 +1,141 @@
+f x = iterarte $ x . x . x 
+
+x :: a -> b
+x . x :: b -> b  => a = b
+x . x . x :: a -> a
+filter :: (Bool -> Bool) -> [c] -> [c]
+
+7.
+
+
+
+om(Ion) ^ V X.(om(X) => areBicla(X))
+concl: areBicla(Ion) v bogat(Ion)
+
+Clauze:
+   a               b
+om(ion) ^ (~om(X) v areBicla(X))
+
+	^
+
+   c             d
+~areBicla(Ion) ^ ~bogat(Ion)
+
+a ^ b ^ c ^ d => concl
+
+λx.λy.((λx.λy.x (y x)) (x y)) ->
+
+alpha - conv
+
+λx.λy.((λz.(y x) (x y)) ->
+
+λx.λy.(y x)
+
+============================================================
+
+λ
+
+op = \L (L \x.\y.false)
+op null:
+	(\L (L \x.\y.false) \x.true) ->
+	((\x.true \x.\y.false)) ->
+	true
+
+op cons:
+	(\L (L \x.\y.false) \x.\y.\z.(x y z)) ->
+	(\x.\y.\z.(x y z) \x.\y.false) ->
+	(\w.\t.\z.(w t z) \x.\y.false) ->
+	\t.\z.(\x.\y.false t z) ->
+	\t.\z.(false)
+
+op = null?
+	
+
+2.
+
+Recursibitate pe stiva.
+
+
+3.
+(define (c L)
+  (foldr (lambda (l res) (if (list? l) (if (null? l) (+ res 1) (+ res (c l))) res)) 0 L))
+
+4.
+
+head $ ([1] ++ [2]) ++ [3] ->
+head $ (1 : ([] ++ [2])) ++ [3] ->
+head $ ([1] : [2]) ++ [3] ->
+head $ [1, 2] ++ [3] ->
+head $ [1] : ([2] ++ [3]) ->
+1
+
+5.
+
+
+x :: t1
+y :: t2
+f :: a -> b -> c
+avem (f x y), (f y x) si f (f x y) (f y x) => t1 == t2 == a == b == t
+(f x y) :: a
+(f y x) :: b
+=> a == b == c == t
+
+f :: t -> t -> t
+
+
+6.
+data Pair a = MakePair a a
+
+instance MyClass Pair where
+	f (MakePair x z) (MakePair y w) = (MakePair (x < y) (z < w)) 
+
+
+7.
+a.
+ORICARE X . ORICARE Y.(locuinta(X) AND intră_soarele_pe_vreo_fereastră_din(X)) => NOT(doctor(Y) AND intră_pe_ușă(Y, X)
+
+Eliminal implicatia:
+ORICARE X . ORICARE Y.(NOT(locuinta(X) OR NOT(intră_soarele_pe_vreo_fereastră_din(X)))) OR NOT(doctor(Y) AND intră_pe_ușă(Y, X))
+
+Eliminam cuantificatorii:
+(NOT(locuinta(X)) OR NOT(intră_soarele_pe_vreo_fereastră_din(X))) OR NOT(doctor(Y) AND intră_pe_ușă(Y, X))
+
+b.
+concluzie:
+NOT(intră_soarele_pe_vreo_fereastră_din(apartamentul_2))
+O negam
+intră_soarele_pe_vreo_fereastră_din(apartamentul_2)
+
+Clauze:
+a) NOT(locuinta(X)) OR NOT(intră_soarele_pe_vreo_fereastră_din(X))
+b) NOT(doctor(Y) AND intră_pe_ușă(X, Y)) = NOT(doctor(Y)) or NOT(intră_pe_ușă(X, Y))
+c) doctor(hipocrate)
+d) locuință(apartamentul_2)
+e) intră_pe_ușă(hipocrate, apartamentul_2)
+f) intră_soarele_pe_vreo_fereastră_din(apartamentul_2)
+
+a + d -> NOT(intră_soarele_pe_vreo_fereastră_din(apartamentul_2))
+b + c -> NOT(intră_pe_ușă(Hipocrate, X))
+a + b + c + d =  NOT(intră_soarele_pe_vreo_fereastră_din(apartamentul_2)) or NOT(intră_pe_ușă(Hipocrate, X))
+	+ e =  NOT(intră_soarele_pe_vreo_fereastră_din(apartamentul_2))
+	+ f -> clauza vida
+
+
+
+
+instance (Num a, Eq a, Ord a) => Ord [a] where
+	l1 <= l2 = last $ sort(l1) <= first $ sort(l2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
